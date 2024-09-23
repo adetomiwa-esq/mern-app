@@ -10,7 +10,9 @@ export const getGoals = (req, res, next) => {
 // access Private
 export const setGoal = (req, res, next) => {
   if (!req.body.text) {
-    res.status(400).json({ message: "Please add a text field" });
+    const error = new Error("Please add a text field");
+    error.status = 400;
+    return next(error);
   }
   res.status(200).json({ message: "Set goals" });
 };
