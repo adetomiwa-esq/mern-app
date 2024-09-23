@@ -2,6 +2,7 @@
   "name": "mern-tutorial",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "serverjs",
   "scripts": {
     "start": "node backend/server",
