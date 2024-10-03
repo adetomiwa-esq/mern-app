@@ -1,9 +1,11 @@
 import expressAsyncHandler from "express-async-handler";
+import goalModel from "../models/goalModel.js";
 // @desc  Get goals
 // @route  GET /api/goals
 // access Private
 export const getGoals = expressAsyncHandler(async (req, res, next) => {
-  res.status(200).json({ message: "Get goals" });
+  const goal = await goalModel.find();
+  res.status(200).json(goal);
 });
 
 // @desc  Set goal
